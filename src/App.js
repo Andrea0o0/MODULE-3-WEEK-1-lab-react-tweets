@@ -7,9 +7,8 @@ function App() {
   return (
     <div className="App">
       {tweetsArray.map((elem,i) => {
-        return <Tweet key={i} tweets={elem}></Tweet>
+        return <Tweet key={i} tweets={elem}/>
       })}
-      {/* <Tweet /> */}
     </div>
   );
 }

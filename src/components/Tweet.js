@@ -1,33 +1,24 @@
-function Tweet({tweets: {user: {name,image,handle},timestamp,message}}) {
+import ProfileImage from "./ProfileImage";
+import User from "./User";
+import Timestamp from "./Timestamp";
+import Message from "./Message";
+import Actions from "./Actions";
+
+const Tweet = ({tweets: {user: {name,image,handle},timestamp,message}}) => {
   return (
     <div className="tweet">
-      <img
-        src={image}
-        className="profile"
-        alt="profile"
-      />
+      <ProfileImage user_image_prop={image}/>
 
       <div className="body">
         <div className="top">
-          <span className="user">
-            <span className="name">{name}</span>
-            <span className="handle">{handle}</span>
-          </span>
+          <User user_name_prop={name} user_handle_prop={handle}/>
 
-          <span className="timestamp">{timestamp}</span>
+          <Timestamp timestamp_prop={timestamp}/>
         </div>
 
-        <p className="message">
-          {message}
-        </p>
+        <Message message_prop={message}/>
 
-        <div className="actions">
-          {/* Font Awesome icons */}
-          <i className="far fa-comment"></i>
-          <i className="fas fa-retweet"></i>
-          <i className="far fa-heart"></i>
-          <i className="fas fa-share"></i>
-        </div>
+        <Actions/>
       </div>
 
       <i className="fas fa-ellipsis-h"></i>
